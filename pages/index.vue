@@ -1,4 +1,5 @@
 <template>
+  <button type="button" @click="signOut">logout</button>
   <div>Dashboard</div>
 </template>
 
@@ -9,13 +10,13 @@ const router = useRouter();
 
 const logout = async () => await auth.singOut();
 
-definePageMeta({
-  middleware: 'auth',
-});
-
 watchEffect(async () => {
   if (!user.value) {
     await router.push('/sign');
   }
+});
+
+definePageMeta({
+  middleware: 'auth',
 });
 </script>

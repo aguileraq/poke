@@ -56,14 +56,18 @@ const signUp = async () => {
 };
 
 const signIn = async () => {
-  const { error } = await auth.signIn({
+  console.log('running signIn method!!');
+  const { error } = await auth.signInWithPassword({
     email: email.value,
     password: password.value,
   });
-  if (error) return router.push('/sign');
+  if (error) console.log(error.message);
 };
 
 watchEffect(async () => {
-  if (user.value) await router.push('/');
+  if (user.value) {
+    console.log(user.value);
+    return navigateTo('/');
+  }
 });
 </script>
