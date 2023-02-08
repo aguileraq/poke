@@ -1,8 +1,5 @@
-
-import AppHeader from './layouts/AppHeader.vue';
-
-
-import AppContainer from './layouts/AppContainer.vue';
+import AppHeader from './layouts/AppHeader.vue'; import AppContainer from
+'./layouts/AppContainer.vue';
 
 <template>
   <AppContainer>
